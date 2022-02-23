@@ -2,7 +2,6 @@ package com.example.iot.service;
 
 import com.example.iot.message.GasConcentration;
 import com.example.iot.message.Humidity;
-import com.example.iot.message.SensorType;
 import com.example.iot.message.Thermometer;
 
 public class PublishDevice extends PublishService {
@@ -17,17 +16,17 @@ public class PublishDevice extends PublishService {
         return new Object[]{
                 new Humidity(
                         house_id,
-                        SensorType.HUMIDITY,
+                        "HUMIDITY",
                         genInteger(50, 100)
                 ),
                 new Thermometer(
                         house_id,
-                        SensorType.HUMIDITY,
+                        "THERMOMETER",
                         genInteger(10, 40)
                 ),
                 new GasConcentration(
                         house_id,
-                        SensorType.HUMIDITY,
+                        "GAS_CONCENTRATION",
                         genDouble(0d, 1d)
                 )
         };

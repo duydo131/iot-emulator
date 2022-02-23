@@ -1,14 +1,14 @@
 package com.example.iot.message;
 
-public class Humidity {
+public class Door {
     private Long houseSensorId;
     private String sensorType;
-    private Integer hum;
+    private Boolean status;
 
-    public Humidity(Long houseSensorId, String sensorType, Integer hum) {
+    public Door(Long houseSensorId, String sensorType, Boolean status) {
         this.houseSensorId = houseSensorId;
         this.sensorType = sensorType;
-        this.hum = hum;
+        this.status = status;
     }
 
     public Long getHouseSensorId() {
@@ -27,11 +27,11 @@ public class Humidity {
         this.sensorType = sensorType;
     }
 
-    public Integer getHum() {
-        return hum;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setHum(Integer hum) {
-        this.hum = hum;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

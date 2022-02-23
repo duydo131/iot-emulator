@@ -5,7 +5,7 @@ import com.rabbitmq.client.*;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public abstract class SubcribeService extends Thread{
+public abstract class SubcribeActionService extends Thread{
     private static final String QUEUE_NAME = "duy";
 
     @Override
@@ -21,7 +21,7 @@ public abstract class SubcribeService extends Thread{
             Connection connection = factory.newConnection();
             Channel channel = connection.createChannel();
 
-            channel.basicConsume(QUEUE_NAME, true, new ConsumerImpl());
+            channel.basicConsume(QUEUE_NAME, true, new ConsumerActionImpl());
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         } finally {

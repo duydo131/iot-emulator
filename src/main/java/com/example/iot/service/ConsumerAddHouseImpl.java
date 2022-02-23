@@ -1,5 +1,11 @@
 package com.example.iot.service;
 
+import com.example.iot.dao.IHouseDAO;
+import com.example.iot.dao.ISensorDAO;
+import com.example.iot.dao.impl.HouseDAO;
+import com.example.iot.dao.impl.SensorDAO;
+import com.example.iot.model.Sensor;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Consumer;
 import com.rabbitmq.client.Envelope;
@@ -7,7 +13,11 @@ import com.rabbitmq.client.ShutdownSignalException;
 
 import java.io.IOException;
 
-public class ConsumerImpl implements Consumer {
+public class ConsumerAddHouseImpl implements Consumer {
+
+    private ISensorDAO sensorDAO = new SensorDAO();
+    private IHouseDAO houseDAO = new HouseDAO();
+
     @Override
     public void handleConsumeOk(String s) {
     }
@@ -34,6 +44,8 @@ public class ConsumerImpl implements Consumer {
 
     @Override
     public void handleDelivery(String s, Envelope envelope, AMQP.BasicProperties basicProperties, byte[] bytes) throws IOException {
-
+        ObjectMapper mapper = new ObjectMapper();
+        Sensor message = mapper.readValue(s, Sensor.class);
+        sensorDAO.insert(message);
     }
 }

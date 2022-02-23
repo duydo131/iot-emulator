@@ -2,10 +2,10 @@ package com.example.iot.message;
 
 public class Thermometer {
     private Long houseSensorId;
-    private SensorType sensorType;
-    private Integer temp;;
+    private String sensorType;
+    private Integer temp;
 
-    public Thermometer(Long houseSensorId, SensorType sensorType, Integer temp) {
+    public Thermometer(Long houseSensorId, String sensorType, Integer temp) {
         this.houseSensorId = houseSensorId;
         this.sensorType = sensorType;
         this.temp = temp;
@@ -19,11 +19,11 @@ public class Thermometer {
         this.houseSensorId = houseSensorId;
     }
 
-    public SensorType getSensorType() {
+    public String getSensorType() {
         return sensorType;
     }
 
-    public void setSensorType(SensorType sensorType) {
+    public void setSensorType(String sensorType) {
         this.sensorType = sensorType;
     }
 
