@@ -2,10 +2,10 @@ package com.example.iot.message;
 
 public class Led {
     private Long houseSensorId;
-    private SensorType sensorType;
+    private String sensorType;
     private Boolean status;
 
-    public Led(Long houseSensorId, SensorType sensorType, Boolean status) {
+    public Led(Long houseSensorId, String sensorType, Boolean status) {
         this.houseSensorId = houseSensorId;
         this.sensorType = sensorType;
         this.status = status;
@@ -19,11 +19,11 @@ public class Led {
         this.houseSensorId = houseSensorId;
     }
 
-    public SensorType getSensorType() {
+    public String getSensorType() {
         return sensorType;
     }
 
-    public void setSensorType(SensorType sensorType) {
+    public void setSensorType(String sensorType) {
         this.sensorType = sensorType;
     }
 

@@ -1,11 +1,13 @@
 package com.example.iot.service;
 
-import com.rabbitmq.client.*;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public abstract class SubcribeActionService extends Thread{
+public abstract class SubcribeActionService extends Thread {
     private static final String QUEUE_NAME = "duy";
 
     @Override

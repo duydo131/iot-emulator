@@ -7,13 +7,14 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.Random;
 import java.util.concurrent.TimeoutException;
 
 
-public abstract class PublishService extends Thread{
+public abstract class PublishService extends Thread {
 
-    private static final String QUEUE_NAME = "duy";
+    private static final String QUEUE_NAME = "queue.hust.iot.stream";
     private static final Random random = new Random();
 
     public abstract Object[] factoryObject();
@@ -31,11 +32,12 @@ public abstract class PublishService extends Thread{
             Connection connection = factory.newConnection();
             Channel channel = connection.createChannel();
             while(true){
-                for(Object o : factoryObject()){
+                for(Object o : factoryObject()) {
                     String message = convertToJson(o);
+                    System.out.println("Thong so thiet bi " + message);
                     channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
                 }
-                Thread.sleep(5000);
+                Thread.sleep(10000);
             }
         } catch (IOException | TimeoutException | InterruptedException e) {
             e.printStackTrace();

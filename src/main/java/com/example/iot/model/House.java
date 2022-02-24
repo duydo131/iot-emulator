@@ -11,6 +11,11 @@ public class House {
         this.name = name;
     }
 
+    public House(Long idServer, String name) {
+        this.idServer = idServer;
+        this.name = name;
+    }
+
     public House() {
     }
 

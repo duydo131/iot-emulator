@@ -1,10 +1,10 @@
 package com.example.iot.dao.impl;
 
-import java.util.List;
-
 import com.example.iot.dao.IHouseDAO;
 import com.example.iot.mapper.HouseMapper;
 import com.example.iot.model.House;
+
+import java.util.List;
 
 public class HouseDAO extends AbstractDAO<House> implements IHouseDAO {
 

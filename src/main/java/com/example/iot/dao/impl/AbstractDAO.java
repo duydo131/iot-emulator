@@ -3,13 +3,7 @@ package com.example.iot.dao.impl;
 import com.example.iot.dao.IGenericDAO;
 import com.example.iot.mapper.RowMapper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,8 +17,9 @@ public class AbstractDAO<T> implements IGenericDAO<T> {
 	public Connection getConnection() {
 		Connection connection = null;
 		try {
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/iot-emulator", "root", "secret");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/iot_emulator", "emulator", "1qazXSW@");
 		} catch (SQLException ex) {
+			ex.printStackTrace();
 		}
 		return connection;
 	}

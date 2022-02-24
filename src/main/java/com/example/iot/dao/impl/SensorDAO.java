@@ -1,11 +1,7 @@
 package com.example.iot.dao.impl;
 
-import com.example.iot.dao.IHouseDAO;
 import com.example.iot.dao.ISensorDAO;
-import com.example.iot.mapper.HouseMapper;
 import com.example.iot.mapper.SensorMapper;
-import com.example.iot.message.SensorType;
-import com.example.iot.model.House;
 import com.example.iot.model.Sensor;
 
 import java.util.List;

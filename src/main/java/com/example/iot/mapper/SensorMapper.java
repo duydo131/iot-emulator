@@ -1,6 +1,5 @@
 package com.example.iot.mapper;
 
-import com.example.iot.model.House;
 import com.example.iot.model.Sensor;
 
 import java.sql.ResultSet;

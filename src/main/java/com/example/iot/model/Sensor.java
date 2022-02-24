@@ -15,6 +15,11 @@ public class Sensor {
         this.sensorType = sensorType;
     }
 
+    public Sensor(Long idServer, String sensorType) {
+        this.idServer = idServer;
+        this.sensorType = sensorType;
+    }
+
     public Integer getId() {
         return id;
     }
